@@ -1,2 +1,0 @@
-[FILE]
-w.txt: ELF 32-bit LSB executable, Intel 80386, version 1 (SYSV), statically linked, for GNU/Linux 2.6.9, stripped
