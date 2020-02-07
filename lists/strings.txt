@@ -1,0 +1,5 @@
+cron
+monero
+xmr
+wget
+curl
