@@ -1,10 +1,13 @@
-require_relative 'utils'
+require_relative '../rubyRE'
+
 class Crypto
 	def self.detect_monero(file_name)
 		#  use regex to match xmr address
 		addresses = []
+		puts "L:"
 		File.readlines(File.join("output", file_name, "strings.txt")).each do |line|
 			if line.match(/^4([0-9]|[A-B])(.){93}/)
+				puts "::::"
 				addresses << line
 			end
 		end
@@ -22,8 +25,9 @@ class Crypto
 		end
 	end
 	def self.detect_ssh(file_name)
+		# detects rsa keys
 		rsa = []
-		File.readlines(File.join("output", file_name, "strinsg.txt")).each do |line|
+		File.readlines(File.join("output", file_name, "strings.txt")).each do |line|
 			if line.match(/^(ssh-[a-z]{3}) ([0-9]{3,4}) ([0-9a-f]{2}:){15}[0-9a-f]{2}$/)
 				rsa << line
 			end

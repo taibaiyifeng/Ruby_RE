@@ -26,7 +26,7 @@ class Commands
 	end
 	def self.detect_strings(file_name)
 		# Checks the output of the strings commands for intresting strings. If strings.txt is not
-		# found then it will run the command method and then run look for intresting strings
+		# found then it will run the command method and then look for intresting strings
 		text = File.read(File.join("output", file_name, "strings.txt")).to_s
 		keywords = File.read(File.join("lists", "strings.txt"))
 		output = ""
