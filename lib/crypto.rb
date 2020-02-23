@@ -36,6 +36,7 @@ class Crypto
 		detect_monero(file_name)
 	end
 	def self.all(file_name)
+		# contains all the methods
 		detect_monero(file_name)
 		detect_bitcoin(file_name)
 		detect_ssh(file_name)
