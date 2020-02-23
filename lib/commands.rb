@@ -1,6 +1,7 @@
 require 'open3'
 require 'digest/md5'
 require 'fileutils'
+require 'uri'
 require_relative 'utils'
 class Commands
 	def self.file_command(file_name)
@@ -24,9 +25,15 @@ class Commands
 		# Runs the string command. Save output to strings.txt
 		stdout, stderr, status =  Open3.capture3("strings #{file_name} > #{File.join("output", file_name, "strings.txt")}")
 	end
+	def self.detect_urls(file_name)
+		output = ""
+		stdout1, stderr, status =  Open3.capture3('grep -E -o "(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)"' + " #{file_name}")
+		stdout2, stderr, status =  Open3.capture3("cat #{ file_name} " + '| grep -Eo "(http|https)://[a-zA-Z0-9./?=_-]*" | sort -u')
+		output += stdout1 + "\n" + stdout2
+		Utils.save_file(file_name, "[ URLS & IPS ]\n #{output}\n")
+	end
 	def self.detect_strings(file_name)
-		# Checks the output of the strings commands for intresting strings. If strings.txt is not
-		# found then it will run the command method and then run look for intresting strings
+		# Checks the output of the strings commands for intresting strings.
 		text = File.read(File.join("output", file_name, "strings.txt")).to_s
 		keywords = File.read(File.join("lists", "strings.txt"))
 		output = ""

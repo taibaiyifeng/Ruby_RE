@@ -7,6 +7,15 @@ class Utils
 		f.write(output)
 		f.close
 	end
-	
+	def self.detect(file_name, regex, header)
+		list = []
+		File.readlines(File.join("output", file_name, "strings.txt")).each do |line|
+			if line.match(/#{regex}/)
+				list << line
+			end
+		end
+		p list
+		Utils.save_file(file_name, "\n[ #{header} ]\n #{list.shift}") if !list.empty?
+	end
 end
 

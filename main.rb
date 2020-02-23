@@ -23,7 +23,9 @@ when "run"
     end
     Commands.file_command(opt[1])
     Commands.strings_command(opt[1])
+    Commands.detect_urls(opt[1])
     Commands.detect_strings(opt[1])
     Commands.hash_file(opt[1])
     Crypto.detect_monero(opt[1])
+    #Crypto.detect_base64(opt[1])
 end

@@ -1,0 +1,49 @@
+[ FILE ]
+d.sh: POSIX shell script, ASCII text executable
+
+[ URLS & IPS ]
+ 185.71.65.238
+140.82.52.87
+45.76.122.92
+51.38.191.178
+51.15.56.161
+158.69.133.18
+104.248.4.162
+89.35.39.78
+107.174.47.156
+83.220.169.247
+51.38.203.146
+144.217.45.45
+107.174.47.181
+176.31.6.16
+46.243.253.15
+176.31.6.16
+200.68.17.196
+188.209.49.54
+181.214.87.241
+121.42.151.137
+217.12.221.244
+195.3.146.118
+195.3.146.118
+3.215.110.66
+185.181.10.234
+
+http://195.3.146.118/d.sh
+http://217.12.221.244/kinsing
+https://bitbucket.org/kimrakfl33/git/raw/master/kinsing
+http://update.aegis.aliyun.com/download/quartz_uninstall.sh
+http://update.aegis.aliyun.com/download/uninstall.sh
+
+[ INTRESTING STRINGS ]
+ cron
+
+monero
+
+xmr
+
+wget
+
+curl
+
+[ FILE HASH ]
+ MD5: c64fa411cf05ad08072065da439ea373

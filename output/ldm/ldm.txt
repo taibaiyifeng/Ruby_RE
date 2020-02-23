@@ -1,0 +1,14 @@
+[ FILE ]
+ldm: POSIX shell script, ASCII text executable, with very long lines
+
+[ INTRESTING STRINGS ]
+ cron
+
+xmr
+
+wget
+
+curl
+
+[ FILE HASH ]
+ MD5: 0991dd677e60b7663b163ff605c738bd
